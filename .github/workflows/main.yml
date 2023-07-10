@@ -15,12 +15,12 @@ jobs:
         id: my-script
         with:
           script: |
+                console.log(context.payload.pull_request.user.id)
                 if(context.payload.pull_request.user.id === 49699333){
                   github.rest.issues.createComment({
                      issue_number: context.issue.number,
                      owner: context.repo.owner,
                      repo: context.repo.repo,
                      body: `@dependabot rebase`
-                     # body: `PR from ${context.payload.pull_request.user.login}`
                      })  
                 }
