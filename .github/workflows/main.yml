@@ -1,10 +1,23 @@
-name: test-action
+name: Pull Request Test
 
-on: [push]
+on:
+  pull_request:
+    branches: [master]
+   
 
 jobs:
-  logging-data:
+  comment-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./.github/actions/test
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          script: |
+                console.log("->",context.payload.pull_request.head.repo.full_name)
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.number,
+                  body: commentBody
+                })
+
