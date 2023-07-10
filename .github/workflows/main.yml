@@ -1,0 +1,9 @@
+name: test-action
+
+on: [push]
+
+jobs:
+  logging-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/test
