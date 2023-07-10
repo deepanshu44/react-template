@@ -8,17 +8,19 @@ on:
 jobs:
   comment-pull-request:
     runs-on: ubuntu-latest
+    permissions: 
+     pull-requests: write
     steps:
-      - uses: actions/checkout@v3
       - uses:  actions/github-script@v6
         id: my-script
         with:
           script: |
-                console.log("->",context.payload.pull_request.head.repo.full_name)
-                await github.rest.issues.createComment({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  issue_number: context.payload.number,
-                  body: commentBody
-                })
-
+                if(context.payload.pull_request.user.id === 49699333){
+                  github.rest.issues.createComment({
+                     issue_number: context.issue.number,
+                     owner: context.repo.owner,
+                     repo: context.repo.repo,
+                     body: `@dependabot rebase`
+                     # body: `PR from ${context.payload.pull_request.user.login}`
+                     })  
+                }
