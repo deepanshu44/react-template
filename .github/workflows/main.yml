@@ -8,10 +8,7 @@ on:
 jobs:
   comment-pull-request:
     runs-on: ubuntu-latest
-    permissions: 
-      pull-requests: write
-      issues: write
-      repository-projects: write
+    permissions: write_all
     steps:
       - name: test
         run: gh pr merge ${{github.event.pull_request.html_url}} -r -b "auto-merging dependabot PR"
