@@ -15,5 +15,6 @@ jobs:
         id: my-script
         with:
           script: |
+               console.log("logging")
                console.log(context)
 
