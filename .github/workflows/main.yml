@@ -16,5 +16,5 @@ jobs:
         with:
           script: |
                console.log("logging")
-               console.log(github.event)
+               console.log(context.pull_request)
 
