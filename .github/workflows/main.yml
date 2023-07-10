@@ -16,5 +16,5 @@ jobs:
         with:
           script: |
                console.log("logging")
-               console.log(context)
+               console.log(context.payload.pull_request.user)
 
