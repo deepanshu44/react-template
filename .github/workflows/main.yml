@@ -9,7 +9,9 @@ jobs:
   comment-pull-request:
     runs-on: ubuntu-latest
     permissions: 
-     pull-requests: write
+      pull-requests: write
+      issues: write
+      repository-projects: write
     steps:
       - uses:  actions/github-script@v6
         id: my-script
