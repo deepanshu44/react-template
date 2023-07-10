@@ -8,6 +8,9 @@ on:
 jobs:
   comment-pull-request:
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      issues: 'write'
     steps:
       - uses:  actions/github-script@v6
         id: my-script
