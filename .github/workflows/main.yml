@@ -12,7 +12,7 @@ jobs:
       pull-requests: write
       issues: write
       repository-projects: write
-      content: write
+      contents: write
     steps:
       - name: test
         run: gh pr merge ${{github.event.pull_request.html_url}} -r -b "auto-merging dependabot PR"
