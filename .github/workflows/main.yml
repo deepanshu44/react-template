@@ -9,8 +9,7 @@ jobs:
   comment-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses:  actions/github-script@v6 
+      - uses:  actions/github-script@v6
         id: my-script
         with:
           script: |
