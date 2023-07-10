@@ -10,7 +10,7 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' }}
     permissions: 
       pull-requests: write
-      content: write
+      contents: write
     steps:
       - name: test
         run: gh pr merge ${{github.event.pull_request.html_url}} -r -b "auto-merging dependabot PR"
