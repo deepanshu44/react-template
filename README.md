@@ -4,6 +4,8 @@
 npm run serve
 ```
 
+to run your application
+
 ```
 npm run build
 ```
