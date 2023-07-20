@@ -5,7 +5,8 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+	"plugin:prettier/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -16,6 +17,7 @@
     ],
     "rules": {
         "semi": "off",
-        "quotes": "off"
+        "quotes": "off",
+	"no-confusing-arrow": ["error", { "allowParens": false}]
     }
 }
