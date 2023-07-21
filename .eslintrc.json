@@ -17,7 +17,6 @@
     ],
     "rules": {
         "semi": "off",
-        "quotes": "off",
-	"no-confusing-arrow": ["error", { "allowParens": false}]
+        "quotes": "off"
     }
 }
