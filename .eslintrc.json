@@ -3,6 +3,11 @@
         "browser": true,
         "es2021": true
     },
+    "overrides": [
+	{
+	"files": ["src/**/*.jsx"]
+        }
+    ],
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
