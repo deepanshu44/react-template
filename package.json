@@ -9,6 +9,8 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "lint": "npx eslint src",
+    "prettier:list-errors": "npx prettier src -c",
+    "prettier:fix-errors": "npx prettier --write src",
     "watch": "webpack --watch",
     "serve": "webpack serve"
   },
