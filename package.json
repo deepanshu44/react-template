@@ -8,6 +8,8 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
+    "prettier:list-errors": "npx prettier src -c",
+    "prettier:fix-errors": "npx prettier --write src",
     "lint:list-errors": "npx eslint src",
     "lint:fix-errors": "npx eslint --fix src",
     "watch": "webpack --watch",
