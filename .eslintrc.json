@@ -22,6 +22,7 @@
     ],
     "rules": {
         "semi": "off",
-        "quotes": "off"
+        "quotes": "off",
+	"react/prop-types":[0]
     }
 }
