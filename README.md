@@ -1,9 +1,10 @@
-# 🚀 Execute project by running
+# 🚀 React Template
+In shell, run:
 
 ```
 npm run serve
 ```
-to run your application
+to start server for your application
 
 ```
 npm run build
