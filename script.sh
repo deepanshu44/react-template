@@ -12,6 +12,7 @@ sc_final(){
     rm ./git ./.github/
     git add . > /dev/null
     git commit -m "base commit" > /dev/null
+    echo -e "Run \e[1;34;40m npm i \e[m to intall dependencies"
     echo -e "\n\e[38;5;2mSuccessfully initialised project\e[m 🎉🎉"
 
 }
