@@ -9,7 +9,7 @@ sc_revert() {
 sc_final(){
     echo -e "\e[38;5;214m\nCommiting changes...\e[m"
     rm script.sh
-    rm ./git ./.github/
+    rm -r ./.git ./.github/
     git add . > /dev/null
     git commit -m "base commit" > /dev/null
     echo -e "Run \e[1;34;40m npm i \e[m to intall dependencies"

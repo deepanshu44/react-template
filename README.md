@@ -6,12 +6,12 @@ Copy the command below which will clone this repo and run a [script](https://git
 
 In your shell, run:
 ```
-git clone --single-branch https://github.com/deepanshu44/react-template;./script.sh
+git clone --single-branch https://github.com/deepanshu44/react-template;cd react-template;./script.sh
 ```
 
 ### For using typescript version:
 ```
-git clone --single-branch https://github.com/deepanshu44/react-template;./script.sh convert
+git clone --single-branch https://github.com/deepanshu44/react-template;cd react-template;./script.sh convert
 ```
 
 and finally to serve your newly created application, run: 
