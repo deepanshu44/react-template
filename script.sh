@@ -37,7 +37,7 @@ sed -e '26,35c \
     -e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
 rm $file;mv tmp $file &&\
 mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
-echo -e "\e[38;5;214m\nCommiting changes...\e[m" &&\
+echo -e "\e[38;5;214m\nInstalling dependencies ...\e[m" &&\
 npm i --save-dev typescript @babel/preset-typescript &&\
 npx tsc --init
 
