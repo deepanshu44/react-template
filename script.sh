@@ -12,13 +12,16 @@ sc_final(){
     rm -r -f ./.git ./.github/
     git add . > /dev/null
     git commit -m "base commit" > /dev/null
-    echo -e "Run \e[1;34;40m npm i \e[m to intall dependencies"
+    echo -e "Run \e[1;34;40m npm run serve \e[m to serve your application"
     echo -e "\n\e[38;5;2mSuccessfully initialised project\e[m 🎉🎉"
 
 }
 
 # only handling Ctrl+C for now
 trap "echo -e '\n\n\e[7;31m X \e[m \e[38;5;1mencountered error:\e[m \e[4;31mSIGINT\e[m';sc_revert;exit $?" SIGINT
+
+echo -e "\e[38;5;214m\nInstalling dependencies ...\e[m"
+npm i
 
 if [ $1 ]
 then
@@ -42,7 +45,6 @@ then
 	-e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
     rm $file;mv tmp $file &&\
     mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
-    echo -e "\e[38;5;214m\nInstalling dependencies ...\e[m" &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
     npx tsc --init
 fi
