@@ -46,7 +46,7 @@ then
     rm $file;mv tmp $file &&\
     mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
-    npx tsc --init
+    npx tsc --init --jsx preserve
     echo -e "\e[38;5;2m✓\e[m done"
 fi
 
