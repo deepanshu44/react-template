@@ -10,12 +10,9 @@ sc_final(){
     echo -e "\e[38;5;214m\nCommiting changes...\e[m"
     rm script.sh
     rm -r -f ./.git ./.github/
-    git add . > /dev/null
-    git commit -m "base commit" > /dev/null
-    echo -e "\e[38;5;2m✓\e[m done"
-    echo -e "Run \e[1;34;40m npm run serve \e[m to serve your application"
+    (git init ;git add .;git commit -m "base commit") > /dev/null
+    echo -e "\e[38;5;2m✓\e[m done\n\nRun \e[1;34;40m npm run serve \e[m to serve your application"
     echo -e "\n\e[38;5;2mSuccessfully initialised project\e[m 🎉🎉"
-
 }
 
 # only handling Ctrl+C for now
