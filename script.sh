@@ -44,9 +44,12 @@ then
 	-e '50c\        extensions: [".ts", ".tsx", ".js"]'\
 	-e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
     rm $file;mv tmp $file &&\
+    file=.eslintrc.json &&\
+    sed -e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
+    rm $file;mv tmp $file &&\
     mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
-    npx tsc --init --jsx preserve
+    npx tsc --init --jsx preserve &&\
     echo -e "\e[38;5;2m✓\e[m done"
 fi
 
