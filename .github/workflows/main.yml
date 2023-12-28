@@ -13,6 +13,6 @@ jobs:
       contents: write
     steps:
       - name: test
-       # run: gh pr merge ${{github.event.pull_request.html_url}} -r -b "auto-merging dependabot PR"
+        run: gh pr merge ${{github.event.pull_request.html_url}} -r -b "auto-merging dependabot PR"
         env:
          GH_TOKEN: ${{ github.token }}
