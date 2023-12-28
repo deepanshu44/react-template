@@ -18,14 +18,15 @@ sc_final(){
 # only handling Ctrl+C for now
 trap "echo -e '\n\n\e[7;31m X \e[m \e[38;5;1mencountered error:\e[m \e[4;31mSIGINT\e[m';sc_revert;exit $?" SIGINT
 
-echo -e "\e[38;5;214m\nInstalling dependencies...\e[m"
-npm i
-echo -e "\e[38;5;2m✓\e[m done"
+echo -e "Do you want install \e[0;103;30mJavascript\e[m (j) or \e[0;104;37mTypescript\e[m (t) ? \e[38;5;67m(default: javascript)\e[m"
+read -r sc_lang
+sc_project=$(echo $sc_lang | grep -i "^t")
 
-if [ $1 ]
+if [ $sc_project ]
 then
     file=webpack.config.js
-    echo -e "\e[38;5;214m\nInstalling typescript dependencies...\e[m"
+    echo -e "\e[38;5;214m\nInstalling \e[0;104;37mTypescript\e[m...\e[m"
+    npm i
     sed -e '26,35c \
 	      {\
 		    test: /\.(ts|tsx)$/i,\
@@ -50,6 +51,10 @@ then
     mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
     npx tsc --init --jsx preserve &&\
+    echo -e "\e[38;5;2m✓\e[m done"
+else
+    echo -e "\e[38;5;214m\nInstalling \e[0;103;30mJavascript\e[m...\e[m"
+    npm i
     echo -e "\e[38;5;2m✓\e[m done"
 fi
 
