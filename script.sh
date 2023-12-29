@@ -8,7 +8,7 @@ sc_revert() {
 
 sc_final(){
     echo -e "\e[38;5;214m\nCommiting changes...\e[m"
-    rm script.sh
+    rm script.sh README.md
     rm -r -f ./.git ./.github/
     (git init ;git add .;git commit -m "base commit") > /dev/null
     echo -e "\e[38;5;2m✓\e[m done\n\nRun \e[1;34;40m npm run serve \e[m to serve your application"
