@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 sc_revert() {
     echo -e "\e[38;5;214m\nReverting...\e[m"
     git restore . > /dev/null
