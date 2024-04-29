@@ -17,7 +17,7 @@ jobs:
         env:
          GH_TOKEN: ${{ github.token }}
 
-  code break check:
+  code-break-check:
     runs-on: ubuntu-latest
     permissions:
       contents: read
