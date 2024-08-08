@@ -18,6 +18,9 @@ sc_final(){
 # only handling Ctrl+C for now
 trap "echo -e '\n\n\e[7;31m X \e[m \e[38;5;1mencountered error:\e[m \e[4;31mSIGINT\e[m';sc_revert;exit $?" SIGINT
 
+read -p "Enter new project name: " new_name
+sed -i "s/\"name\": \".*\",/\"name\": \"$new_name\",/" package.json
+
 echo -e "Do you want install \e[0;103;30mJavascript\e[m (j) or \e[48;5;27m\e[38;5;15mTypescript\e[m (t) ? \e[38;5;67m(default: javascript)\e[m"
 read -r sc_lang
 sc_project=$(echo $sc_lang | grep -i "^t")
