@@ -34,10 +34,18 @@ export default defineConfig([globalIgnores(["**/dist"]), {
         sourceType: "module",
     },
 
+    settings: {
+        react: {
+            version: "detect"
+        }
+    },
+
     rules: {
         semi: "off",
         quotes: "off",
         "react/prop-types": [0],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off"
     },
 }, {
     files: ["src/**/*.jsx"],
