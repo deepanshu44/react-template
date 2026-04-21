@@ -54,7 +54,9 @@ then
     file=eslint.config.js &&\
     sed -e '51s/\.jsx/.tsx/' < $file > tmp &&\
     rm $file;mv tmp $file &&\
-    sed -i 's/\.jsx//' ./src/index.js &&\
+    file=./src/index.js &&\
+    sed -e 's/\.jsx//' < $file > tmp &&\
+    rm $file;mv tmp $file &&\
     mv ./src/index.js ./src/index.tsx;mv ./src/App.jsx ./src/App.tsx &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
     npx tsc --init --jsx preserve &&\
