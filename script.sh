@@ -30,28 +30,32 @@ then
     file=webpack.config.js
     echo -e "\e[38;5;214m\nInstalling \e[48;5;27m\e[38;5;15mTypescript\e[m...\e[m"
     npm i
-    sed -e '26,35c \
-	      {\
-		    test: /\.(ts|tsx)$/i,\
-		    exclude: /node_modules/,\
-		    use: {\
-			loader: "babel-loader",\
-			options: {\
-			    presets: [["@babel/preset-react"],\
-			    ["@babel/preset-typescript", {\
-				isTSX: true,\
-				allExtensions: true\
-			    }]]\
-			},\
-		    },\
-	      },'\
-	-e '50c\        extensions: [".ts", ".tsx", ".js"]'\
-	-e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
+    sed -e '31,40c \
+	            {\
+	                test: /\\.(ts|tsx)$/i,\
+	                exclude: /node_modules/,\
+	                use: {\
+	                    loader: "babel-loader",\
+	                    options: {\
+	                        presets: [\
+	                            ["@babel/preset-react"],\
+	                            ["@babel/preset-typescript", {\
+	                                isTSX: true,\
+	                                allExtensions: true\
+	                            }]\
+	                        ]\
+	                    },\
+	                },\
+	            },' \
+	-e '55c\    	extensions: [".ts", ".tsx", ".js"]' \
+	-e '13s/\.js/.tsx/' \
+	< $file > tmp &&\
     rm $file;mv tmp $file &&\
-    file=.eslintrc.json &&\
-    sed -e '8s/\.js\(x\)\?/.ts\1/' < $file > tmp &&\
+    file=eslint.config.js &&\
+    sed -e '51s/\.jsx/.tsx/' < $file > tmp &&\
     rm $file;mv tmp $file &&\
-    mv ./src/index.js ./src/index.ts;mv ./src/App.jsx ./src/App.tsx &&\
+    sed -i 's/\.jsx//' ./src/index.js &&\
+    mv ./src/index.js ./src/index.tsx;mv ./src/App.jsx ./src/App.tsx &&\
     npm i --save-dev typescript @babel/preset-typescript &&\
     npx tsc --init --jsx preserve &&\
     echo -e "\e[38;5;2m✓\e[m done"
