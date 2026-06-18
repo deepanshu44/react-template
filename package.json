@@ -27,6 +27,7 @@
     "@mui/material": "^7.1.0",
     "@reduxjs/toolkit": "^2.8.2",
     "babel-loader": "^10.0.0",
+    "cowsay": "^1.6.0",
     "css-loader": "^7.1.2",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.5",
