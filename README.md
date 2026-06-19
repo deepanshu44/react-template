@@ -16,3 +16,5 @@ npm run serve
 ```
 
 This project has been created using **webpack-cli**
+
+💻🖥
